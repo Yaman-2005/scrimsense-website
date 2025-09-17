@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScrimSense - Professional VALORANT Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0F172A;
+            color: #E2E8F0;
+            overflow-x: hidden;
+        }
+        .aurora-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                radial-gradient(ellipse at 20% 25%, rgba(229, 62, 62, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 80% 35%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 90%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+            z-index: 0;
+            animation: aurora 20s infinite linear;
+        }
+        @keyframes aurora {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #F87171, #F472B6, #A78BFA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-flow 5s ease infinite;
+            background-size: 200% 200%;
+        }
+        @keyframes gradient-flow { 
+            0%{background-position:0% 50%}
+            50%{background-position:100% 50%}
+            100%{background-position:0% 50%}
+        }
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-animate.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0F172A; }
+        ::-webkit-scrollbar-thumb { background: #4B5563; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #6B7280; }
+    </style>
+</head>
+<body class="relative">
+    <div class="aurora-bg"></div>
+    <div class="relative z-10">
+
+        <!-- Header -->
+        <header class="py-4 px-6 md:px-12 flex justify-between items-center bg-slate-900/50 backdrop-blur-sm border-b border-slate-700/50 sticky top-0">
+            <div class="flex items-center space-x-3">
+                <img src="scrimsense.ico" alt="ScrimSense Logo" class="w-10 h-10">
+                <span class="text-2xl font-bold text-white tracking-wider">ScrimSense</span>
+            </div>
+            <a href="https://drive.google.com/file/d/1LWFw7kgVU4qKKE7miFEMPK4-qTTOhDUT/view?usp=drive_link" class="bg-red-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-red-700 transition-colors shadow-lg shadow-red-500/10">
+                Download Beta
+            </a>
+        </header>
+
+        <!-- Hero Section -->
+        <main class="px-6 py-20 md:py-32 text-center">
+            <h1 class="text-5xl md:text-7xl font-black text-white leading-tight">
+                The Future of VALORANT <br/> <span class="gradient-text">Scrim Tracking.</span>
+            </h1>
+            <p class="mt-6 max-w-2xl mx-auto text-lg text-slate-400">
+                The ultimate local VOD review and scrim analysis tool for competitive VALORANT teams. Dive deeper than ever before with advanced stats, tactical replays, and a professional-grade rating system.
+            </p>
+            <div class="mt-10 flex justify-center items-center gap-4">
+                <a href="https://drive.google.com/file/d/1LWFw7kgVU4qKKE7miFEMPK4-qTTOhDUT/view?usp=drive_link" class="bg-red-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-red-700 transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-red-500/20 flex items-center gap-2">
+                    Download for Windows
+                </a>
+            </div>
+        </main>
+
+        <!-- Features Section -->
+        <section class="py-24 px-6 md:px-12">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-16 scroll-animate">Everything You Need to Win</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="glass-card rounded-2xl p-8 scroll-animate">
+                        <div class="bg-red-500/20 text-red-400 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Automated Match Logging</h3>
+                        <p class="text-slate-400">A resilient Python logger runs silently, auto-detecting and saving every match you play with no manual input required.</p>
+                    </div>
+                    <!-- Feature 2 -->
+                    <div class="glass-card rounded-2xl p-8 scroll-animate" style="transition-delay: 0.1s;">
+                        <div class="bg-red-500/20 text-red-400 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Tactical 2D Replay</h3>
+                        <p class="text-slate-400">The core of the app. An interactive, top-down map plotting every engagement. Hover the kill feed to see a full snapshot of all player positions.</p>
+                    </div>
+                    <!-- Feature 3 -->
+                    <div class="glass-card rounded-2xl p-8 scroll-animate" style="transition-delay: 0.2s;">
+                        <div class="bg-red-500/20 text-red-400 w-12 h-12 rounded-lg flex items-center justify-center mb-4">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20V16"/></svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">Professional-Grade Rating</h3>
+                        <p class="text-slate-400">We've integrated the statistically-backed Open Soup Rating (OSR) to provide a true measure of your in-game impact, far beyond simple KDA.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="py-24 px-6 md:px-12 bg-slate-900/30">
+            <div class="max-w-6xl mx-auto text-center scroll-animate">
+                <h2 class="text-4xl font-bold text-white mb-4">See ScrimSense in Action</h2>
+                <p class="text-lg text-slate-400 mb-12 max-w-3xl mx-auto">A quick walkthrough of the core features, from automated tracking to the tactical 2D replay.</p>
+                
+                <!-- YouTube Video Embed -->
+                <div class="aspect-[16/9] rounded-2xl overflow-hidden shadow-2xl border-2 border-slate-700/50">
+                    <iframe class="w-full h-full" src="https://www.youtube.com/embed/gva1r9tMp7Y" title="scrimsense showcase v1.1.1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- Screenshot Gallery -->
+                <div class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="scroll-animate" style="transition-delay: 0.1s;"> <!-- Testing purposes-->
+                        <h3 class="text-2xl font-bold text-white mb-4">Detailed Scoreboards</h3>
+                        <img src="assets/scoreboard.png" alt="Screenshot of the ScrimSense scoreboard" class="rounded-xl shadow-lg border border-slate-700/50">
+                    </div>
+                    <div class="scroll-animate" style="transition-delay: 0.2s;">
+                         <h3 class="text-2xl font-bold text-white mb-4">Detailed Player Analysis</h3>
+                        <img src="assets/playerpage.png" alt="Screenshot of the 2D tactical replay" class="rounded-xl shadow-lg border border-slate-700/50">
+                    </div>
+                    <div class="scroll-animate" style="transition-delay: 0.3s;">
+                         <h3 class="text-2xl font-bold text-white mb-4">Tactical 2D Replays</h3>
+                        <img src="assets/replay.png" alt="Screenshot of the 2D tactical replay" class="rounded-xl shadow-lg border border-slate-700/50">
+                    </div>
+                    <div class="scroll-animate" style="transition-delay: 0.3s;">
+                         <h3 class="text-2xl font-bold text-white mb-4">Economy Report</h3>
+                        <img src="assets/econ.png" alt="Screenshot of the 2D tactical replay" class="rounded-xl shadow-lg border border-slate-700/50">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Compliance & Trust Section -->
+        <section class="py-24 px-6 md:px-12 bg-slate-900/30">
+             <div class="max-w-4xl mx-auto text-center scroll-animate">
+                <h2 class="text-4xl font-bold">Secure & Compliant by Design</h2>
+                <p class="mt-4 text-lg text-slate-400">Built with Riot Games' policies and player privacy as our top priorities.</p>
+                <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <div class="flex items-center justify-center w-12 h-12 mx-auto bg-gray-700 rounded-lg">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4h-4Z"/></svg>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold text-white">Local-First Data</h3>
+                        <p class="mt-1 text-slate-400 text-sm">All match logs are stored exclusively on your machine. You own your data.</p>
+                    </div>
+                     <div class="text-center">
+                        <div class="flex items-center justify-center w-12 h-12 mx-auto bg-gray-700 rounded-lg">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold text-white">Read-Only Operation</h3>
+                        <p class="mt-1 text-slate-400 text-sm">The app only reads game logs and never modifies game files or memory.</p>
+                    </div>
+                     <div class="text-center">
+                        <div class="flex items-center justify-center w-12 h-12 mx-auto bg-gray-700 rounded-lg">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold text-white">Post-Match Only</h3>
+                        <p class="mt-1 text-slate-400 text-sm">Provides zero real-time information, ensuring no unfair advantages.</p>
+                    </div>
+                     <div class="text-center">
+                        <div class="flex items-center justify-center w-12 h-12 mx-auto bg-gray-700 rounded-lg">
+                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                        </div>
+                        <h3 class="mt-4 text-lg font-semibold text-white">RSO Ready</h3>
+                        <p class="mt-1 text-slate-400 text-sm">Architected from the ground up for full Riot Sign On (OAuth) compliance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="py-24 px-6 md:px-12 text-center">
+            <div class="max-w-2xl mx-auto scroll-animate">
+                <h2 class="text-4xl font-bold text-white">Ready to Level Up Your Scrims?</h2>
+                <p class="mt-4 text-lg text-slate-400">Download the ScrimSense beta today and get the competitive edge your team has been missing. It's time to turn data into dominance.</p>
+                 <a href="https://drive.google.com/file/d/1LWFw7kgVU4qKKE7miFEMPK4-qTTOhDUT/view?usp=drive_link" class="mt-8 inline-block bg-red-600 text-white font-bold px-8 py-4 rounded-xl hover:bg-red-700 transition-all duration-300 transform hover:scale-105 shadow-2xl shadow-red-500/20">
+                    Get ScrimSense for Windows
+                </a>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="border-t border-slate-700/50 text-center py-6 px-6 text-slate-500 text-sm">
+            <p>&copy; 2025 ScrimSense. All rights reserved.</p>
+            <p class="mt-2">ScrimSense is a third-party application and is not affiliated with, endorsed, or sponsored by Riot Games, Inc. or VALORANT.</p>
+            <p class="mt-2">
+                <a href="https://x.com/scrimsense" class="hover:text-white transition-colors">Twitter</a>
+                 &middot; 
+                <a href="https://discord.gg/RSqQzPCsR5" class="hover:text-white transition-colors">Discord</a>
+            </p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Simple scroll animation observer
+        const scrollAnimator = {
+            init() {
+                const elements = document.querySelectorAll('.scroll-animate');
+                if (!elements.length) return;
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                elements.forEach(el => observer.observe(el));
+            }
+        };
+        document.addEventListener('DOMContentLoaded', () => {
+            scrollAnimator.init();
+        });
+    </script>
+</body>
+</html>
